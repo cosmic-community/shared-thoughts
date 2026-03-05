@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a1a;
+    color: #e2e8f0;
+  }
+
+  ::selection {
+    background-color: rgba(91, 101, 245, 0.4);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .pixel-grid-cell {
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+  }
+
+  .pixel-grid-cell:hover {
+    transform: scale(1.8);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #ff2d87, #00d4ff, #00ff87);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-panel {
+    background: rgba(15, 14, 46, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(91, 101, 245, 0.2);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(91, 101, 245, 0.05) 0%,
+      rgba(91, 101, 245, 0.15) 50%,
+      rgba(91, 101, 245, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
